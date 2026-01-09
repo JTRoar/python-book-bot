@@ -25,15 +25,22 @@ def count_characters(text_string):
         
     return count_dict
 
-def sort_dict(dict_to_sort):
-    sorted_LIST_of_dicts = []
+def sort_on(list_of_dictionaries_to_sort):
+    return list_of_dictionaries_to_sort["num"]
 
-    for dict in dict_to_sort:
-        sorted_LIST_of_dicts.append(dict)
+def make_list_of_dicts(dict_to_sort):
     
-    print(sorted_LIST_of_dicts)
-
-
+    sorted_LIST_of_dicts = []
+    
+    for char in dict_to_sort:
+        individual_dict = {
+            "char": char, "num": dict_to_sort[char]
+        }
+        
+        sorted_LIST_of_dicts.append(individual_dict)
+    
+    #print(sorted_LIST_of_dicts)
+    sorted_LIST_of_dicts.sort(reverse=True, key=sort_on)
     return sorted_LIST_of_dicts
 
 """ references:
